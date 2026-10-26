@@ -2172,10 +2172,10 @@ html.lite .is-live .time{color:var(--accent-blue)}
                 video.addEventListener('playing', showControls);
                 showControls();
 
-                const streamUrl = `http://127.0.0.1:6878/ace/manifest.m3u8?${kind === 'infohash' ? 'infohash' : 'id'}=${id}`;
+                const streamUrl = `http://192.168.18.134:6878/ace/manifest.m3u8?${kind === 'infohash' ? 'infohash' : 'id'}=${id}`;
                 let isAlive = false;
                 try {
-                    isAlive = await fetch('http://127.0.0.1:6878/webui/api/service?method=get_version', { mode: 'no-cors' }).then(() => true).catch(() => false);
+                    isAlive = await fetch('http://192.168.18.134:6878/webui/api/service?method=get_version', { mode: 'no-cors' }).then(() => true).catch(() => false);
                     if (!isAlive) {
                         console.log("🚀 Despertando AceStream Engine...");
                         window.location.href = 'acestream://';
