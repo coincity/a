@@ -1137,7 +1137,7 @@ html.lite .is-live .time{color:var(--accent-blue)}
         FlagGroups.load();
         const ExportManager = {
             PREF_KEY: 'export_prefs',
-            VLC_BASE: 'http://127.0.0.1:6878/ace/getstream?id=',
+            VLC_BASE: 'http://192.168.18.134:6878/ace/getstream?id=',
             SECTIONS: [
                 { key: 'DAZN', label: 'DAZN', color: '#fffc01' },
                 { key: 'MOVISTAR', label: 'Movistar+', color: '#0165fe' },
@@ -1985,7 +1985,7 @@ html.lite .is-live .time{color:var(--accent-blue)}
                 if (btn) btn.remove();
             },            launchExternal(item, name) {
                 if (item && item.kind === 'infohash') {
-                    const path = '127.0.0.1:6878/ace/getstream?infohash=' + item.id;
+                    const path = '192.168.18.134:6878/ace/getstream?infohash=' + item.id;
                     if (/Android/i.test(navigator.userAgent)) {
                         location.href = 'intent://' + path + '#Intent;scheme=http;package=org.videolan.vlc;type=video/*;S.title=' + encodeURIComponent(name || '') + ';end';
                     } else {
