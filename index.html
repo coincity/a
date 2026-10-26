@@ -1994,7 +1994,7 @@ html.lite .is-live .time{color:var(--accent-blue)}
                     return;
                 }
                 // location.href = 'acestream://' + item.id;
-                location.href = 'http://192.168.18.134:6878/ace/getstream?infohash=' + item.id;
+                location.href = 'intent://' + path + '#Intent;scheme=http;package=org.videolan.vlc;type=video/*;S.title=' + encodeURIComponent(name || '') + ';end';
             },
             async openInternalPlayer(id, name, kind) {
                 if (this.stallCheckInterval) { clearInterval(this.stallCheckInterval); this.stallCheckInterval = null; }
