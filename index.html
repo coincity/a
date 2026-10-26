@@ -627,7 +627,7 @@ html.lite .is-live .time{color:var(--accent-blue)}
                 { id: 'ERA', ipnsKey: 'k2k4r8lm8tkmuxbc8lkmq1in3v0oya1p6pe9o5bu0hu30br5ko08k2gb', subPath: '/data/listas/listaplana.txt', helia: true, parser: 'parseEra', isValid: (t) => t && (t.includes('#EXTINF') || /(?<![a-f0-9])[a-f0-9]{40}(?![a-f0-9])/i.test(t)) },
                 { id: 'ELCANO', ipnsKey: 'k51qzi5uqu5dh5qej4b9wlcr5i6vhc7rcfkekhrxqek5c9lk6gdaiik820fecs', subPath: '/hashes.json', directUrls: ['https://tokyo.elcano-ipfs.workers.dev/k51qzi5uqu5dh5qej4b9wlcr5i6vhc7rcfkekhrxqek5c9lk6gdaiik820fecs/hashes.json'], parser: 'parseElcano', isValid: (t) => { try { return Array.isArray(JSON.parse(t).hashes); } catch (e) { return false; } } },
                 // Fuente local: lista M3U que sirve tu propio motor AceStream (AS). No usa gateways IPFS.
-                { id: 'AS', label: 'AS', localUrl: 'http://127.0.0.1:6878/pl.m3u', onlyGroups: ['Amateur', 'Series', 'Movies'], parser: 'parseAS', isValid: (t) => t && (t.includes('#EXTINF') || /(?<![a-f0-9])[a-f0-9]{40}(?![a-f0-9])/i.test(t)) }
+                { id: 'AS', label: 'AS', localUrl: 'http://192.168.18.134:6878/pl.m3u', onlyGroups: ['Amateur', 'Series', 'Movies'], parser: 'parseAS', isValid: (t) => t && (t.includes('#EXTINF') || /(?<![a-f0-9])[a-f0-9]{40}(?![a-f0-9])/i.test(t)) }
             ],generateHash(str){let hash=5381,i=str.length;while(i)hash=(hash*33)^str.charCodeAt(--i);return(hash>>>0).toString(16)},
 
             async fetchSourceRaw(src) {
